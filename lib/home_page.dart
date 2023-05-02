@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:brick_breaker_app/cover_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,8 +13,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   double ballX = 0;
   double ballY = 0;
+  bool gameStarted = false;
 
   void startGame() {
+    gameStarted = true;
     Timer.periodic(Duration(milliseconds: 10), (timer) {
       setState(() {
         ballY -= 0.01;
@@ -31,9 +34,8 @@ class _HomePageState extends State<HomePage> {
           child: Stack(
             children: [
               // tap to play
-              Container(
-                alignment: Alignment(0, -0.2),
-                child: Text('Tap to play', style: TextStyle(color: Colors.deepPurple[400]),),
+              CoverScreen(
+                gameStarted: gameStarted,
               ),
               // ball
               Container(
