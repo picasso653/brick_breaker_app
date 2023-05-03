@@ -38,15 +38,7 @@ class _HomePageState extends State<HomePage> {
                 gameStarted: gameStarted,
               ),
               // ball
-              Container(
-                alignment: const Alignment(0, 0),
-                child: Container(
-                  height: 15,
-                  width: 15,
-                  decoration: const BoxDecoration(
-                      color: Colors.deepPurple, shape: BoxShape.circle),
-                ),
-              )
+              
             ],
           ),
         ),
