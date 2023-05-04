@@ -1,6 +1,8 @@
 import 'dart:async';
 
+import 'package:brick_breaker_app/ball.dart';
 import 'package:brick_breaker_app/cover_screen.dart';
+import 'package:brick_breaker_app/player.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,6 +15,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   double ballX = 0;
   double ballY = 0;
+  double playerX = 0;
+  double playerWidth = 0.3;
   bool gameStarted = false;
 
   void startGame() {
@@ -38,7 +42,16 @@ class _HomePageState extends State<HomePage> {
                 gameStarted: gameStarted,
               ),
               // ball
-              
+               MyBall(
+                ballX: ballX,
+                ballY: ballY,
+              ),
+
+              // player
+              MyPlayer(
+                playerX: playerX,
+                playerWidth: playerWidth,
+              )
             ],
           ),
         ),
