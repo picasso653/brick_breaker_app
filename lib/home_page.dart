@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
         body: Center(
           child: Stack(
             children: [
-              // tap
+              // tap to play
               CoverScreen(
                 gameStarted: gameStarted,
               ),
