@@ -30,29 +30,34 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: startGame,
-      child: Scaffold(
-        backgroundColor: Colors.deepPurple.shade100,
-        body: Center(
-          child: Stack(
-            children: [
-              // tap to play
-              CoverScreen(
-                gameStarted: gameStarted,
-              ),
-              // ball
-               MyBall(
-                ballX: ballX,
-                ballY: ballY,
-              ),
-
-              // player
-              MyPlayer(
-                playerX: playerX,
-                playerWidth: playerWidth,
-              )
-            ],
+    return RawKeyboardListener(
+      focusNode: FocusNode(),
+      autofocus: true,
+      onKey: (event) {},
+      child: GestureDetector(
+        onTap: startGame,
+        child: Scaffold(
+          backgroundColor: Colors.deepPurple.shade100,
+          body: Center(
+            child: Stack(
+              children: [
+                // tap to play
+                CoverScreen(
+                  gameStarted: gameStarted,
+                ),
+                // ball
+                 MyBall(
+                  ballX: ballX,
+                  ballY: ballY,
+                ),
+    
+                // player
+                MyPlayer(
+                  playerX: playerX,
+                  playerWidth: playerWidth,
+                )
+              ],
+            ),
           ),
         ),
       ),

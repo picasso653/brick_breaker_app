@@ -12,12 +12,15 @@ class MyPlayer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment(playerX, 0.9),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(10),
       child: Container(
-        height: 10,
-        width: MediaQuery.of(context).size.width*playerWidth/2,
-        color: Colors.deepPurple,
+        alignment: Alignment(playerX, 0.9),
+        child: Container(
+          height: 10,
+          width: MediaQuery.of(context).size.width*playerWidth/2,
+          color: Colors.deepPurple,
+        ),
       ),
     );
   }
