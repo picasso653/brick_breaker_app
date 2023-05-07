@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                 CoverScreen(
                   gameStarted: gameStarted,
                 ),
-                // ball
+                // 
                  MyBall(
                   ballX: ballX,
                   ballY: ballY,
