@@ -31,13 +31,17 @@ class _HomePageState extends State<HomePage> {
 
   void moveLeft() {
     setState(() {
-      playerX -= 0.2;
+      if (!(playerX - 0.2 <= 1)) {
+        playerX -= 0.2;
+      }
     });
   }
 
   void moveRight() {
     setState(() {
-      playerX += 0.2;
+      if (!(playerX + 0.2 <= 1)) {
+        playerX += 0.2;
+      }
     });
   }
 
