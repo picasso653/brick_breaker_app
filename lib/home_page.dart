@@ -78,6 +78,15 @@ class _HomePageState extends State<HomePage> {
                 MyPlayer(
                   playerX: playerX,
                   playerWidth: playerWidth,
+                ),
+                // Where is player exactly
+                Container(
+                  alignment: Alignment(playerX, 0.9),
+                  child: Container(
+                    color: Colors.red,
+                    width: 4,
+                    height: 15,
+                  ),
                 )
               ],
             ),
