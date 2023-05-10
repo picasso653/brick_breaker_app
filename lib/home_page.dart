@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     gameStarted = true;
     Timer.periodic(Duration(milliseconds: 10), (timer) {
       setState(() {
-        ballY -= 0.01;
+        ballY += 0.001;
       });
     });
   }
@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
 
   void moveRight() {
     setState(() {
-      if (!(playerX + 0.2 >= 1)) {
+      if (!(playerX + playerWidth >= 1)) {
         playerX += 0.2;
       }
     });
