@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -25,18 +25,30 @@ class _HomePageState extends State<HomePage> {
   var balldirection = direction.DOWN;
 
   void startGame() {
-    gameStarted = true;
-    Timer.periodic(Duration(milliseconds: 10), (timer) {
-      updateDirection();
-      moveBall();
+     if (!gameStarted) {
+    setState(() {
+      gameStarted = true;
     });
+    Timer.periodic(Duration(milliseconds: 10), (timer) {
+      setState(() {
+        updateDirection();
+        moveBall();
+      });
+    });
+  }
   }
 
   void moveBall() {
     if (balldirection == direction.DOWN) {
       ballY += 0.01;
+      if (ballY >= 0.9) {
+      updateDirection();
+    }
     } else if (balldirection == direction.UP) {
       ballY -= 0.01;
+      if (ballY <= -0.9) {
+      updateDirection();
+    }
     }
   }
 
