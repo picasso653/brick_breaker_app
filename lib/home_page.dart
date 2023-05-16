@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-// ignore: constant_identifier_names
+// ignore: constant_identifier_names, camel_case_types
 enum direction { UP, DOWN }
 
 class _HomePageState extends State<HomePage> {
@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       gameStarted = true;
     });
-    Timer.periodic(Duration(milliseconds: 10), (timer) {
+    Timer.periodic(const Duration(milliseconds: 10), (timer) {
       setState(() {
         updateDirection();
         moveBall();

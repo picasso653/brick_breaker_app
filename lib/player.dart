@@ -1,10 +1,11 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+// ignore_for_file: prefer_typing_uninitialized_variables
 
+import 'package:flutter/material.dart';
+
+// ignore: duplicate_ignore
 class MyPlayer extends StatelessWidget {
   final playerX;
+  // ignore: prefer_typing_uninitialized_variables
   final playerWidth;
   const MyPlayer({super.key,
   this.playerX,
